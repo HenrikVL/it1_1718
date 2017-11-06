@@ -1,0 +1,116 @@
+body {
+    margin:auto;
+    font-family: "Segoe UI";
+}
+
+div.header {
+    background-color: #D9DBF1;
+    grid-area: header;
+    height: 100px;
+    border: solid #0B3948;
+    border-width: 2px;
+
+}
+
+div.nav {
+    background-color: #416165;
+    grid-area: nav;
+    height: 50px;
+    border: solid #0B3948;
+    border-width: 2px;
+}
+
+div.main {
+    background-color: #D0CDD7;
+    padding: 10px;
+    grid-area: main;
+    height: 200px;
+    border: solid #0B3948;
+    border-width: 2px;
+}
+
+div.aside1 {
+    background-color: #ACB0BD;
+    grid-area: aside1;
+    border: solid #0B3948;
+    border-width: 2px;
+}
+
+div.aside2 {
+    background-color: #ACB0BD;
+    grid-area: aside2;
+    border: solid #0B3948;
+    border-width: 2px;
+}
+
+div.footer {
+    background-color: #D9DBF1;
+    grid-area: footer;
+    height: 100px;
+    border: solid #0B3948;
+    border-width: 2px;
+}
+
+div.grid {
+    display: grid;
+    grid-template-areas:
+            "header"
+            "nav"
+            "aside1"
+            "main"
+            "aside2"
+            "footer"
+}
+
+div.menuX {
+    border: solid #0B3948;
+    border-width: 2px;
+    text-align: center;
+    padding: 5px
+}
+
+div.productsX {
+    border: solid #0B3948;
+    border-width: 2px;
+    text-align: center;
+    padding: 5px;
+;
+}
+
+div.nav {
+    display: grid;
+    font-size: 25px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+            "menuX  productsX"
+}
+
+@media (min-width: 500px) {
+    div.grid{
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+                "header header"
+                "nav       nav"
+                "main   aside1"
+                "main   aside2"
+                "footer footer";
+
+    }
+}
+
+@media (min-width: 700px) {
+    div.grid {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas:
+                "header header header"
+                "nav    nav       nav"
+                "aside1 main   aside2"
+                "aside1 main   aside2"
+                "aside1 footer aside2" ;
+        margin: auto;
+    }
+}
+
+p1 {
+    font-size: 14px;
+}
