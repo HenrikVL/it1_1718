@@ -1,0 +1,125 @@
+body {
+    margin: auto;
+    font-family: "Segoe UI";
+    background-color: #FFFAFF;
+    background-image: url("http://www.desktop-screens.com/data/out/71/3134692-matrix-wallpapers.jpg");
+}
+
+div.grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+    "header     header      header"
+    "picture    picture     picture"
+    "menu       menu        menu"
+    "links1     main        links2"
+    "footer     footer      footer"
+}
+
+div.header {
+    grid-area: header;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: transparent;
+    font-stretch: ultra-expanded;
+}
+
+//div.picture {
+    grid-area: picture;
+    text-align: center;
+    height: 400px;
+    background-image: url("https://cdn.wallpapersafari.com/2/77/o4y3Oq.jpg");
+    background-size: cover;
+    border-top: solid #4F6D7A;
+    border-bottom: solid #4F6D7A;
+}
+
+div.menu {
+    grid-area: menu;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #4A6FA5;
+
+}
+
+div.main {
+    grid-area: main;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #FFFAFF;
+
+}
+
+div.links1 {
+    grid-area: links1;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #FFFAFF;
+
+}
+
+div.links2 {
+    grid-area: links2;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #FFFAFF;
+
+}
+
+div.footer {
+    grid-area: footer;
+    text-align: left;
+    background-color: #4A6FA5;
+    height: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+div.grid1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+            "about      creator"
+}
+
+
+nav ul li{
+    color: #D9DBF1;
+    display: inline;
+    font-size: 20px;
+    padding-right: 20px;
+    text-decoration: solid #000000;
+}
+
+h1{
+    color: #FFFAFF;
+    font-size: 50px;
+}
+
+div.about {
+    margin: 20px;
+}
+
+div.creator {
+    margin: 20px;
+}
+
+a { color:white } /* Globally */
+
+/* Each state */
+
+a:visited { text-decoration: none; color:black; }
+a:hover { text-decoration: none; color:white; }
+a:focus { text-decoration: none; color:white; }
+a:hover, a:active { text-decoration: none; color:black }

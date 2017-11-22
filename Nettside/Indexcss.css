@@ -1,0 +1,93 @@
+body{
+    margin: auto;
+    font-family: "Segoe UI";
+    background-color: #35404f;
+}
+
+div.header {
+   grid-area: header;
+    background-image: url("http://www.deteched.com/wp-content/uploads/2016/11/abstract_pyramids-2560x1440.jpg");
+    background-size: cover;
+    height: 800px;
+}
+div.name {
+    text-align: center;
+    color: yellow;
+    margin: auto;
+}
+
+div.contentmenu {
+    grid-area: contentmenu;
+    font-size: 40px;
+    margin: 60px;
+    background-color: #0B3948;
+    padding: 50px;
+
+}
+
+
+div.htmlintro {
+    grid-area: htmlintro;
+    padding: 50px;
+    height: 200px;
+    margin: auto;
+
+}
+
+div.gridintro {
+    grid-area: gridintro;
+    padding: 50px;
+    height: 200px;
+    margin: auto;
+
+}
+
+div.grid {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "contentmenu"
+    "intro";
+}
+
+div.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "htmlintro  gridintro"
+}
+
+
+        @media (max-width: 700px) {
+            div.grid{
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas:
+                "header         header"
+                "contentmenu    contentmenu"
+                "intro      intro"
+            }
+
+            div.intro {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                "htmlintro"
+                "gridintro";
+            }
+
+            div.gridintro{
+                padding-top: 500px;
+            }
+
+
+
+}
+
+nav ul li{
+    color: #D9DBF1;
+    display: inline;
+    padding-right: 50px;
+}
+
+h1 {
+    color: #D9DBF1;
+}

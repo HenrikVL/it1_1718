@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QuerySelector</title>
+</head>
+<body>
+
+    <div id="boks">hei </div>
+
+    <div id="tall"></div>
+
+    <script>
+
+    document.querySelector("#boks").innerHTML += "Molde VGS.";
+
+
+    //løkke eller for-løkke
+
+    for (var i = 1; i<1000; i++)
+    {
+        document.querySelector('#tall').innerHTML += i + " ";
+
+        if (i%3==0){
+            document.querySelector('#tall').innerHTML += "<span class='red'> + i + </span>" + " "
+        }
+
+        if (i % 10 == 0){
+            document.querySelector('#tall').innerHTML += "<br>"
+
+        }
+
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

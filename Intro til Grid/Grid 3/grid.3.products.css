@@ -36,6 +36,8 @@ div.aside1 {
     border-width: 2px;
 }
 
+
+
 div.aside2 {
     background-color: #ACB0BD;
     grid-area: aside2;
@@ -86,8 +88,10 @@ div.nav {
 }
 
 @media (min-width: 500px) {
+
     div.grid{
         grid-template-columns: 2fr 1fr;
+
         grid-template-areas:
                 "header header"
                 "nav       nav"
@@ -113,4 +117,8 @@ div.nav {
 
 p1 {
     font-size: 14px;
+}
+
+img {
+    max-width:;
 }
