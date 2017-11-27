@@ -52,7 +52,6 @@ div.main {
     margin: 20px;
     padding: 20px;
     background-color: #FFFAFF;
-
 }
 
 div.links1 {
@@ -115,7 +114,18 @@ div.creator {
     margin: 20px;
 }
 
-a { color:white } /* Globally */
+h4  {
+    font-size: 18px;
+    font-stretch: expanded;
+}
+
+}
+
+q {
+    font-style: italic;
+}
+
+a { color:black } /* Globally */
 
 /* Each state */
 
@@ -123,3 +133,18 @@ a:visited { text-decoration: none; color:black; }
 a:hover { text-decoration: none; color:white; }
 a:focus { text-decoration: none; color:white; }
 a:hover, a:active { text-decoration: none; color:black }
+
+@media (max-width: 700px) {
+
+    div.grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "header     header"
+        "menu       menu"
+        "main       main"
+        "links1     links2"
+        "footer     footer"
+    }
+
+
+}
