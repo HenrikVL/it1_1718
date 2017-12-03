@@ -169,3 +169,7 @@ img {
 h4 {
     font-size: 30px;
 }
+
+table, th, td {
+    border: 1px solid black;
+}
