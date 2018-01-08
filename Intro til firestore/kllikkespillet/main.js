@@ -1,3 +1,4 @@
+
 firebase.initializeApp({
     apiKey: "AIzaSyCdOR8NdzJSVpfztdgNVVB3SD8ZvKP3vMQ",
     authDomain: "klikkepsillet.firebaseapp.com",
@@ -41,7 +42,7 @@ var mappe = db.collection('spill').orderBy('poeng', 'desc').limit(20);
 
 mappe.onSnapshot(function(data){
     listeE.innerHTML = "";
-    var dokumenter = data.docs;
+    var dokumenter = data.document;
     for(var x in dokumenter){
        listeE.innerHTML += "<li>"+ dokumenter[x].data().navn + ": " + dokumenter[x].data().poeng +"</li>"
     }

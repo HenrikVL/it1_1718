@@ -58,6 +58,7 @@ div.intro {
 }
 
 
+
         @media (max-width: 700px) {
             div.grid{
                 grid-template-columns: 1fr 1fr;

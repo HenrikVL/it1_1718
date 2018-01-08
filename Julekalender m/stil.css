@@ -1,0 +1,75 @@
+body{
+    background-color: darkslategray;
+    text-align: center;
+    font-family: "Times New Roman";
+}
+
+div.wrapper{
+    max-width: 1024px;
+    margin: auto;
+    background-color: ;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 40px;
+}
+
+div.luke1, .luke2, .luke3, .luke4, .luke5, .luke6, .luke7, .luke7, .luke8, .luke9, .luke10, .luke11, .luke12, .luke13,
+.luke14, .luke15, .luke16, .luke17, .luke18, .luke19, .luke20, .luke21, .luke22, .luke23, .luke24 {
+    width: 200px;
+    height: 200px;
+    font-size: 170px;
+    background-color: crimson;
+    color: white;
+    box-shadow: black 5px 5px 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+div.luke1:hover, .luke2:hover, .luke3:hover, .luke4:hover, .luke5:hover, .luke6:hover, .luke7:hover, .luke7:hover,
+.luke8:hover, .luke9:hover, .luke10:hover, .luke11:hover, .luke12:hover, .luke13:hover,
+.luke14:hover, .luke15:hover, .luke16:hover, .luke17:hover, .luke18:hover, .luke19:hover, .luke20:hover, .luke21:hover,
+.luke22:hover, .luke23:hover, .luke24:hover{
+    color: black;
+    box-shadow: black 7px 7px 7px;
+}
+
+div.luke1:active, .luke2:active, .luke3:active, .luke4:active, .luke5:active, .luke6:active, .luke7:active, .luke7:active,
+.luke8:active, .luke9:active, .luke10:active, .luke11:active, .luke12:active, .luke13:active,
+.luke14:active, .luke15:active, .luke16:active, .luke17:active, .luke18:active, .luke19:active, .luke20:active,
+.luke21:active, .luke22:active, .luke23:active, .luke24:active{
+    color: black;
+    box-shadow: black 3px 3px 3px;
+    width: 197px;
+    height: 197px;
+    font-size: 165px;
+}
+
+a.href {
+    color: white;
+    text-decoration: none;
+
+}
+
+h1{
+    font-size: 100px;
+}
+
+.spacing{
+    height: 100px;
+}
+
+.img {
+    padding: 50px;
+    box-shadow: black 10px 10px 10px;
+    margin: 50px;
+    outline: solid black 5px;
+    background-image: url("https://img.tutpad.com/tut/0/106/62_CHRISTMASPATTERN.jpg?size=%3C700x");
+}
+
+img {
+    border: solid black 5px;
+    box-shadow: black 5px 5px 5px;
+}
