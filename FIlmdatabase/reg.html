@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrer ny film</title>
+    <link rel="stylesheet" href="stil.css">
+
+</head>
+<body>
+
+
+<div class="skjemapakker">
+
+    <div class="skjemainfo">
+        <h1>Register new movie:</h1>
+    </div>
+    <div class="skjemaform">
+
+
+        <p>
+            <label>Title:</label>
+            <input name="title" type="text" id="inputTitle">
+        </p>
+
+        <p>
+            <label>Genre:</label>
+            <select name="" id="inputGenre">
+                <option value="Drama">Drama</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Action">Action</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Horror">Horror</option>
+                <option value="Romance">Romance</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="History">History</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Biography">Biography</option>
+            </select>
+        </p>
+        <p>
+            <label>Year</label>
+            <input type="number" id="inputYear">
+        </p>
+        <p>
+            <label>Rating:</label>
+            <input type="range" min="0" max="10" value="5" step="1" id="inputRating">
+        </p>
+        <p>
+            <button id="buttonAdd">Add movie</button>
+        </p>
+        <p id="outputRating">
+
+        </p>
+
+    </div>
+
+</div>
+
+<div class="preWrapper">
+
+    <div class="preInfo">
+        <h1>Search:</h1>
+    </div>
+    <div class="preview">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for movies..">
+
+        <div class="docAdd">
+
+        </div>
+
+        <div class="movieList">
+
+            <ul class="liste" id="myUL">
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="topWrapper">
+    <div class="topInfo">
+        <h1>Top 10 movies:</h1>
+    </div>
+
+    <div class="topMain">
+        <ol class="topListe">
+
+        </ol>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
+
+<script>
+    firebase.initializeApp({
+        apiKey: "AIzaSyAB21yV8f5lGoTOUzbTEQUdbE5YSHyJV2Q",
+        authDomain: "firestore-9adfd.firebaseapp.com",
+        databaseURL: "https://firestore-9adfd.firebaseio.com",
+        projectId: "firestore-9adfd",
+        storageBucket: "firestore-9adfd.appspot.com",
+        messagingSenderId: "11685326624"
+    });
+
+    // Initialize Cloud Firestore through Firebase
+    var db = firebase.firestore();
+
+    var inputTitle      = document.querySelector('#inputTitle');
+    var inputGenre      = document.querySelector('#inputGenre');
+    var inputYear       = document.querySelector('#inputYear');
+    var inputRating     = document.querySelector('#inputRating');
+    var outputRating    = document.querySelector('#outputRating');
+    var buttonAdd       = document.querySelector('#buttonAdd');
+    var movieRef        = document.querySelector('#movieRef');
+    var docAdd          = document.querySelector('.docAdd');
+    var listeE          = document.querySelector('.liste');
+    var top10           = document.querySelector('.topListe');
+
+    outputRating.innerHTML = "Rating"+ ": <span class='rating'>" + inputRating.value + "</span>";
+    inputRating.oninput = function () {
+        outputRating.innerHTML = "Rating" + ": <span class='rating'>" + inputRating.value + "</span>";
+    };
+
+    buttonAdd.addEventListener('click', function () {
+        db.collection("filmdb").add({
+            title:  inputTitle.value,
+            genre:  inputGenre.value,
+            year:   inputYear.value,
+            rating: inputRating.value*1
+        })
+            .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+            docAdd.innerHTML = "<p>Sucsessfully uploaded: " + "<span class='added'>" + inputTitle.value + "</span></p>";
+        })
+            .catch(function(error) {
+                console.error("Error adding document: ", error);
+            });
+    });
+    var ref = db.collection("filmdb");
+
+    ref.onSnapshot(function(data){
+        listeE.innerHTML = "";
+        var dokument = data.docs;
+        for(var x in dokument){
+            listeE.innerHTML += "<li>" + "<a href='#'>" + dokument[x].data().title + " " + dokument[x].data().rating + "</a>" + "</li>";
+        }
+    });
+
+    ref.onSnapshot(function(data){
+        top10.innerHTML = "";
+        var dokument = data.docs;
+        for(var x in dokument){
+            top10.innerHTML += "<li>" + "<a href='#'>" + dokument[x].data().title + " " + dokument[x].data().rating + "</a>" + "</li>";
+        }
+    });
+
+
+    function myFunction() {
+        // Declare variables
+        var input, filter, ul, li, a, i;
+        input = document.getElementById('myInput');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName('li');
+
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+
+
+
+
+    /*
+    var mappe = db.collection('filmdb').orderBy('letter', 'desc').limit(20);
+
+    mappe.onSnapshot(function(data){
+        movieRef.innerHTML = "";
+        var inputTitle = data.document;
+        for(var x in dokumenter){
+            movieRef.innerHTML += "<li>"+ inputTitle[x].data().name +"</li>"
+        }
+
+    });
+*/
+/*
+    db.collection("filmdb").add({
+        title: "Pulp Fiction",
+        genre: "Drama",
+        year: "1994",
+        rating: 8.9
+    })
+*/
+
+
+</script>
+
+</body>
+</html>

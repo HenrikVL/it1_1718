@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Even</title>
+
+    <style>
+        .grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas:
+            "header     header      header"
+            "aside1     body        aside2"
+            "footer     footer      footer"
+        }
+
+
+        .header{
+            grid-area: header;
+            background-color: red;
+            margin: 40px;
+            padding: 20px;
+            width: auto;
+        }
+
+        .body{
+            grid-area: body;
+            background: orange;
+            margin: 40px;
+            padding: 20px;
+        }
+
+        .footer{
+            grid-area: footer;
+            background-color: blue;
+            margin: 40px;
+            padding: 20px;
+            width: auto;
+        }
+
+        .aside1{
+            grid-area: aside1;
+            background-color: yellow;
+            margin: 40px;
+            padding: 20px;
+        }
+
+        .aside2{
+            grid-area: aside2;
+            background-color: yellow;
+            margin: 40px;
+            padding: 20px;
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+<div class="grid">
+
+    <div class="header">
+        <h1>HEADER</h1>
+        <h2>Hei og velkommen til denne nettsiden</h2>
+    </div>
+
+
+    <div class="body">
+        <h1>BODY</h1>        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur beatae debitis, eaque esse eum fugit
+            hic ipsam ipsum maxime minima neque nisi perferendis, porro praesentium quo sapiente veritatis voluptatum.</p>
+
+    </div>
+
+
+    <div class="footer">
+       <h21>FOOTER</h21>        <p>sekjfhsejfklhsfkjsbrkjhdsrgkljhdsgkjdbrgkljdrghdkjrghadkjghr
+        rfgbhrklharkljhrasgkhasglkjsraglkjasrhfkljasrflre
+        asrkfjsrafjhgrfkjasfkjsrrfls</p>
+    </div>
+
+    <div class="aside1">
+        <h1>ASIDE1</h1>
+    </div>
+
+    <div class="aside2">
+<h1>ASIDE2</h1>
+    </div>
+</div>
+
+
+
+</body>
+
+</html>

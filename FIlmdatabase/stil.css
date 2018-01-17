@@ -1,0 +1,204 @@
+body {
+    background-color: #4F6D7A;
+    margin: 0;
+    padding: 15px;
+    font-family: "Courier New";
+}
+
+.skjemapakker {
+    max-width: 1024px;
+    margin: auto;
+    box-shadow: #033b42 -5px 5px 10px 2px;
+    border-radius: 20px;
+}
+
+.skjemainfo {
+    background-color: #033b42;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.skjemainfo ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skjemaform {
+    background-color: white;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.skjemaform p {
+    margin: 0;
+}
+
+.skjemaform .full_bredde {
+    grid-column: 1 / 3;
+}
+
+.skjemaform *{
+    width: 100%;
+    font-size: 20px;
+}
+
+.skjemaform button {
+    box-shadow: black 2px 2px 2px;
+    background-color: #033b42;
+    color: white;
+    border: 0;
+    padding: 10px;
+    font-family: "Courier New";
+    font-size: 30px;
+}
+
+.skjemaform button:hover {
+    cursor: pointer;
+    font-family: "Courier New";
+    font-size: 30px;
+}
+
+.skjemaform button:active{
+    box-shadow: black 1px 1px 1px;
+    font-family: "Courier New";
+    font-size: 29px;
+}
+
+.skjemaform label {
+    display: block;
+}
+
+h1 {
+    text-align: center;
+}
+
+.skjemaform #outputRating {
+    color: white;
+    background-color: #033b42;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: black 2px 2px 2px;
+    padding-top: 10px;
+}
+
+span.rating {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+
+.preWrapper {
+    max-width: 1024px;
+    margin: auto;
+    box-shadow: #033b42 -5px 5px 10px 2px;
+    border-radius: 20px;
+    margin-top: 50px;
+
+}
+
+.preInfo {
+    background-color: #033b42;
+    display: grid;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.preInfo ul {
+    list-style: none;
+    padding: 0;
+}
+
+.preview {
+    background-color: white;
+    padding: 20px;
+    display: grid;
+    grid-gap: 20px;
+    border-radius: 0px 0px 10px 10px;
+    grid-template-columns: 1fr;
+
+}
+
+.preview p {
+    margin: 0;
+}
+
+.preview *{
+    width: 100%;
+    font-size: 20px;
+}
+
+.docAdd {
+    display: grid;
+    font-size: 30px;
+    text-align: left;
+}
+
+.docAdd span {
+    font-weight: bold;
+    display: inline;
+    font-size: 30px;
+}
+
+.docAdd p {
+    font-size: 30px;
+}
+
+.movieList {
+    display: grid;
+}
+
+.movieList ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    height: 300px;
+    overflow: scroll;
+}
+
+input {
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    font-weight: bold;
+    color: black;
+}
+
+.topWrapper {
+    max-width: 1024px;
+    margin: auto;
+    box-shadow: #033b42 -5px 5px 10px 2px;
+    border-radius: 20px;
+    margin-top: 40px;
+}
+
+.topInfo {
+    background-color: #033b42;
+    display: grid;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.topMain {
+    background-color: white;
+    padding: 20px;
+    display: grid;
+    grid-gap: 20px;
+    border-radius: 0px 0px 10px 10px;
+    grid-template-columns: 1fr;
+}
