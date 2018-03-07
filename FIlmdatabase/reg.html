@@ -43,7 +43,7 @@
         </p>
         <p>
             <label>Rating:</label>
-            <input type="range" min="0" max="10" value="5" step="1" id="inputRating">
+            <input type="range" min="0" max="10" value="5" step="0.1" id="inputRating">
         </p>
         <p>
             <button id="buttonAdd">Add movie</button>
@@ -128,10 +128,14 @@
     var listeE          = document.querySelector('.liste');
     var top10           = document.querySelector('.topListe');
 
+
+
     outputRating.innerHTML = "Rating"+ ": <span class='rating'>" + inputRating.value + "</span>";
     inputRating.oninput = function () {
         outputRating.innerHTML = "Rating" + ": <span class='rating'>" + inputRating.value + "</span>";
     };
+
+
 
     buttonAdd.addEventListener('click', function () {
         db.collection("filmdb").add({
@@ -148,6 +152,11 @@
                 console.error("Error adding document: ", error);
             });
     });
+
+
+
+
+
     var ref = db.collection("filmdb");
 
     ref.onSnapshot(function(data){
@@ -159,15 +168,9 @@
     });
 
 
-    /*
-    ref.onSnapshot(function(data){
-        top10.innerHTML = "";
-        var dokument = data.docs;
-        for(var x in dokument){
-            top10.innerHTML += "<li>" + "<a href='#'>" + dokument[x].data().title + " " + dokument[x].data().rating + "</a>" + "</li>";
-        }
-    });
-   */
+
+
+
 
     function myFunction() {
         // Declare variables
@@ -188,10 +191,27 @@
         }
     }
 
+    var query =     ref.orderBy("rating", "desc").limit(10);
+
+    query.onSnapshot(function (data) {
+        var objekt = data.docs;
+        for(var x in objekt){
+            top10.innerHTML +=     "<div class='.film'>"+ "<li>"+objekt[x].data().title+ ": "+ objekt[x].data().rating+"</>"+"</li>"+ "<br>" +"</div>";
 
 
 
-    /*
+        }
+
+    })
+
+
+
+
+
+
+
+
+
     var mappe = db.collection('filmdb').orderBy('letter', 'desc').limit(20);
 
     mappe.onSnapshot(function(data){
@@ -202,15 +222,6 @@
         }
 
     });
-*/
-/*
-    db.collection("filmdb").add({
-        title: "Pulp Fiction",
-        genre: "Drama",
-        year: "1994",
-        rating: 8.9
-    })
-*/
 
 
 </script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add useres</title>
+</head>
+<body>
+
+<form id="userForm">
+    <input id="fName" placeholder="First name..." type="text" required>
+    <input id="lName" placeholder="Last name..." type="text" required>
+    <button type="submit">Add user</button>
+
+</form>
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+
+<script>
+    firebase.initializeApp({
+        apiKey: "AIzaSyCdOR8NdzJSVpfztdgNVVB3SD8ZvKP3vMQ",
+        authDomain: "klikkepsillet.firebaseapp.com",
+        projectId: "klikkepsillet"
+    });
+
+    // Initialize Cloud Firestore through Firebase
+    var db = firebase.firestore();
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

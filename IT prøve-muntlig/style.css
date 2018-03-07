@@ -1,0 +1,282 @@
+body{
+    display: grid;
+    background-color: white;
+    padding 15px;
+    font-family: 'Mina', sans-serif;
+
+}
+
+.grid{
+    display: grid;
+    margin: 0px;
+    padding: 10px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer"
+    "form";
+
+}
+
+.header{
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 1fr 10fr 2fr;
+    grid-template-areas:
+    "menu   empty       title        register";
+    background-color: #2B2B2B;
+    color: white;
+    padding: 10px;
+
+}
+
+.menu{
+    grid-area: menu;
+    text-align: center;
+    margin: 5px;
+    border: solid white;
+    font-size: 16px;
+}
+
+.title{
+    grid-area: title;
+    text-align: center;
+    margin: 5px;
+    border: solid white;
+    font-size: 16px;
+}
+
+.register{
+    grid-area: register;
+    text-align: center;
+    margin: 5px;
+    border: solid white;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#myBtn{
+    margin: 5px;
+    padding: auto;
+    text-align: center;
+    font-family: 'Mina', sans-serif;
+    font-size: 30px;
+    color: #00D8C3;
+    border: none;
+    background-color: transparent;
+}
+#myBtn:hover {
+    margin: 5px;
+    padding: auto;
+    text-align: center;
+    font-family: 'Mina', sans-serif;
+    font-size: 30px;
+    color: #00CCB7;
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
+}
+
+
+
+.main{
+    grid-area: main;
+    width: auto;
+    margin: 20px;
+    background-color: #363647;
+}
+
+
+.overview{
+    grid-area: overview;
+    display: grid;
+    background-color:#363647;
+    color: white;
+    padding: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "mainOverview       nameSrc        sportSrc";
+}
+
+.contentWrapper{
+    grid-area: contentWrapper;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "name       sport"
+    "list       list";
+    background-color:#4D4E66;
+    color: white;
+    padding: 10px;
+}
+
+.name{
+    grid-area: name;
+}
+
+.sport{
+    grid-area: sport;
+}
+
+
+
+
+
+#list1 {
+    background-color: #4D4E66;
+    text-align: center;
+    grid-area: list;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    font-weight: bold;
+
+}
+
+#list1 th{
+    width: 33.3%;
+}
+
+#list td{
+    width: 33.3%;
+    text-align: center;
+}
+
+#list {
+    background-color: #4D4E66;
+    text-align: center;
+    grid-area: list;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+
+
+
+
+
+
+.footer{
+    grid-area: footer;
+    background-color: #2B2B2B;
+    color: white;
+    padding: 5px;
+}
+
+#nameSrc{
+    grid-area: nameSrc;
+    margin: auto;
+}
+#nameSrcInput{
+    width: auto;
+    padding: 10px;
+    margin: 8px;
+    box-sizing: border-box;
+}
+
+#sportSrc{
+    grid-area: sportSrc;
+    margin: auto;
+}
+#sportSrcInput{
+    width: auto;
+    padding: 10px;
+    margin: 8px;
+    box-sizing: border-box;
+}
+
+
+#mainOverview{
+    grid-area: mainOverview;
+    margin: auto;
+}
+
+
+.form{
+    grid-area: form;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "regTitle       x           x"
+    "regName        regSport    regMedals"
+    "regProfile     regProfile  regProfile"
+}
+
+.regTitle{
+    grid-area: regTitle;
+    padding: 5px;
+    margin: 5px;
+}
+.regName{
+    grid-area: regName;
+    padding: 5px;
+    margin: 5px;
+}
+.regSport{
+    grid-area: regSport;
+    padding: 5px;
+    margin: 5px;
+}
+.regMedals{
+    grid-area: regMedals;
+    padding: 5px;
+    margin: 5px;
+}
+.regProfile{
+    grid-area: regProfile;
+    padding: 5px;
+    margin: 5px;
+}
+#registerProfileBtn{
+    grid-area: rpBtn;
+    padding: 5px;
+    margin: 5px;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}}
+
+
+
+
+
+

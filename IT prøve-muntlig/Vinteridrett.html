@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Mina" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="grid">
+
+<div class="header">
+    <div class="menu">
+        <h1>||||</h1>
+    </div>
+    <div class="title">
+        <h1>Norske Idrettsutøvere</h1>
+    </div>
+
+
+
+    <div class="register">
+
+        <button id="myBtn">Register</button>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="main">
+
+    <div class="overview">
+       <div id="mainOverview">
+           <h2>Oversikt:</h2>
+       </div>
+
+        <div id="nameSrc">
+        <input id="nameSrcInput" type="text" placeholder="Navn...">
+        </div>
+
+        <div id="sportSrc">
+            <input id="sportSrcInput" type="text" placeholder="Gren...">
+        </div>
+    </div>
+
+    <div class="contentWrapper">
+
+        <!-- FIX grid -->
+
+        <table id="list1" style="overflow-x: auto">
+            <tr>
+                <th>Navn:</th>
+                <th>Sport:</th>
+                <th>Medaljer:</th>
+            </tr>
+        </table>
+
+    </div>
+
+    <div class="contentWrapper">
+        <table id="list" style="overflow-x: auto">
+
+        </table>
+
+    </div>
+
+
+</div>
+
+<div class="footer">
+    <h1>footer</h1>
+</div>
+
+
+
+
+</div>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="form">
+
+        <div class="regTitle">
+            <h1>Registrer utøvere:</h1>
+        </div>
+
+        <div class="regName">
+            <h2>Navn på utøver:</h2>
+            <input id="inputName" type="text" required placeholder="Navn...">
+        </div>
+
+        <div class="regSport">
+            <h2>Utøverens gren:</h2>
+            <select id="inputSport" required>
+                <option value="Langrenn">Langrenn</option>
+                <option value="Hopp">Hopp</option>
+                <option value="Skiskyting">Skiskyting</option>
+                <option value="Skøyter">Skøyter</option>
+                <option value="Alpint">Alpint</option>
+            </select>
+        </div>
+
+        <div class="regMedals">
+            <h2>Ol-gull:</h2>
+            <input id="inputMedals" type="value" required placeholder="Antall medaljer...">
+        </div>
+        <div class="regProfile">
+            <button id="registerProfileBtn" type="submit">
+                Registrer idrettsprofil
+            </button>
+        </div>
+
+    </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

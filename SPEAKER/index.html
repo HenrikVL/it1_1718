@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speaker</title>
+    <link rel="stylesheet" href="spk.css">
+
+
+</head>
+
+<body onload="startTime()">
+
+<div class="wrapper">
+    <div class="header">
+        <div class="menu">
+            <div class="home">
+                <button class="speakerButton">SPEAKER</button>
+            </div>
+            <div class="search">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for waves...">
+            </div>
+            <div class="post">
+                <button type="button" class="postButton">POST</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="main">
+        <div class="speak">
+            <h2>Post a wave:</h2>
+            <form id="postForm">
+                <input type="text" id="inputName" placeholder="Who are you?" required>
+                <div id="clock"></div>
+                <textarea name="inputContent" id="inputContent" cols="80" rows="5" placeholder="Tell me what's up..."></textarea>
+            </form>
+
+        </div>
+        <div class="stream">
+            <h2>Speakerfeed:</h2>
+
+
+                <div class="contentwrapper">
+
+
+
+                </div>
+
+
+
+        </div>
+
+
+    </div>
+
+    <div class="footer">
+        <h1>footer</h1>
+
+    </div>
+
+    <div class="space1">
+
+
+    </div>
+
+    <div class="space2">
+
+
+    </div>
+</div>
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
