@@ -13,6 +13,7 @@ var iMedals =           document.querySelector('#inputMedals');
 var outputProfile =     document.querySelector('#list');
 var regProfileBtn =     document.querySelector('#registerProfileBtn');
 
+
 db.collection("profiler");
 
 
@@ -31,9 +32,57 @@ profiler.onSnapshot(function (data) {
     outputProfile.innerHTML = "";
     var document = data.docs;
     for(var x in document){
-        outputProfile.innerHTML += "<tr>" + "<td>" + document[x].data().name + "</td>" + "<td>" + document[x].data().sport + "</td>" + "<td>" + document[x].data().medals + "</td>" + "</tr>";
+        outputProfile.innerHTML +=
+            "<tr>" +
+            "<td>" + document[x].data().name + "</td>" +
+            "<td>" + document[x].data().sport + "</td>" +
+            "<td>" + document[x].data().medals + "</td>" +
+            "</tr>";
     }
 });
+
+var srtName = document.querySelector("#srtNameTitle");
+
+srtName.onclick = function(){
+
+    var orderQueryName = profiler.orderBy("name", "asc");
+
+    orderQueryName.onSnapshot(function(data){
+        outputProfile.innerHTML = "";
+        var objekt = data.docs;
+        for(var x in objekt)
+            outputProfile.innerHTML +=
+                "<tr>" +
+                "<td>" + objekt[x].data().name + "</td>" +
+                "<td>" + objekt[x].data().sport + "</td>" +
+                "<td>" + objekt[x].data().medals + "</td>" +
+                "</tr>";
+    });
+};
+
+var srtMedal = document.querySelector("#srtMedalTitle");
+
+srtMedal.onclick = function(){
+
+    var orderQueryMedals = profiler.orderBy("medals", "desc");
+
+    orderQueryMedals.onSnapshot(function(data){
+        outputProfile.innerHTML = "";
+        var objekt = data.docs;
+        for(var x in objekt)
+            outputProfile.innerHTML +=
+                "<tr>" +
+                "<td>" + objekt[x].data().name + "</td>" +
+                "<td>" + objekt[x].data().sport + "</td>" +
+                "<td>" + objekt[x].data().medals + "</td>" +
+                "</tr>";
+    });
+};
+
+
+
+
+
 
 
 
@@ -67,6 +116,18 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -2,7 +2,7 @@ body{
     display: grid;
     background-color: white;
     padding 15px;
-    font-family: 'Mina', sans-serif;
+    font-family: 'Raleway', sans-serif;
 
 }
 
@@ -24,40 +24,40 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 10fr 2fr;
     grid-template-areas:
-    "menu   empty       title        register";
+    "menu   x       title        register";
     background-color: #2B2B2B;
     color: white;
     padding: 10px;
 
 }
 
-.menu{
+.menu {
     grid-area: menu;
     text-align: center;
-    margin: 5px;
-    border: solid white;
-    font-size: 16px;
+    margin: auto;
+    font-size: 20px;
 }
 
 .title{
     grid-area: title;
     text-align: center;
-    margin: 5px;
-    border: solid white;
-    font-size: 16px;
+    margin: auto;
+    font-size: 20px;
+    font-stretch: expanded;
+    font-family: 'Teko', sans-serif;
+
 }
 
 .register{
     grid-area: register;
     text-align: center;
-    margin: 5px;
-    border: solid white;
-    padding: 10px;
+    margin: auto;
+    padding: auto;
     font-size: 16px;
 }
 
 #myBtn{
-    margin: 5px;
+    margin: auto;
     padding: auto;
     text-align: center;
     font-family: 'Mina', sans-serif;
@@ -67,14 +67,15 @@ body{
     background-color: transparent;
 }
 #myBtn:hover {
-    margin: 5px;
+    margin: auto;
     padding: auto;
     text-align: center;
     font-family: 'Mina', sans-serif;
     font-size: 30px;
     color: #00CCB7;
-    font-weight: bold;
     border: none;
+    font-weight: bold;
+    font-style: italic;
     background-color: transparent;
 }
 
@@ -88,16 +89,7 @@ body{
 }
 
 
-.overview{
-    grid-area: overview;
-    display: grid;
-    background-color:#363647;
-    color: white;
-    padding: 5px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-    "mainOverview       nameSrc        sportSrc";
-}
+
 
 .contentWrapper{
     grid-area: contentWrapper;
@@ -165,22 +157,24 @@ body{
     padding: 5px;
 }
 
+
+.overview{
+    grid-area: overview;
+    display: grid;
+    background-color:#363647;
+    color: white;
+    padding: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+            "nameSrcGrid     SSgrid     SNgrid";
+}
+
+.nameSrcGrid{
+    grid-area: nameSrcGrid;
+    margin: auto;
+}
+
 #nameSrc{
-    grid-area: nameSrc;
-    margin: auto;
-}
-#nameSrcInput{
-    width: auto;
-    padding: 10px;
-    margin: 8px;
-    box-sizing: border-box;
-}
-
-#sportSrc{
-    grid-area: sportSrc;
-    margin: auto;
-}
-#sportSrcInput{
     width: auto;
     padding: 10px;
     margin: 8px;
@@ -188,10 +182,33 @@ body{
 }
 
 
-#mainOverview{
-    grid-area: mainOverview;
+#sortGrid{
+    grid-area: SNgrid;
     margin: auto;
 }
+
+#sort{
+    width: auto;
+    padding: 10px;
+    margin: 8px;
+    box-sizing: border-box;
+}
+
+#sortSportGrid{
+    grid-area: SSgrid;
+    margin: auto;
+}
+#sortSport{
+    width: auto;
+    padding: 10px;
+    margin: 8px;
+    box-sizing: border-box;
+}
+
+
+
+
+
 
 
 .form{

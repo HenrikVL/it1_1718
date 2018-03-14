@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Mina" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Teko" rel="stylesheet">
 
 </head>
 <body>
@@ -25,7 +25,7 @@
 
     <div class="register">
 
-        <button id="myBtn">Register</button>
+        <button id="myBtn">Registrer</button>
 
 
     </div>
@@ -43,18 +43,15 @@
 
 <div class="main">
 
+
+
     <div class="overview">
-       <div id="mainOverview">
-           <h2>Oversikt:</h2>
-       </div>
 
-        <div id="nameSrc">
-        <input id="nameSrcInput" type="text" placeholder="Navn...">
+        <div class="nameSrcGrid">
+            <h3>Søk:</h3>
+            <input id="nameSrc" type="text" placeholder="Navn..." onkeyup="myFunction()">
         </div>
 
-        <div id="sportSrc">
-            <input id="sportSrcInput" type="text" placeholder="Gren...">
-        </div>
     </div>
 
     <div class="contentWrapper">
@@ -63,9 +60,18 @@
 
         <table id="list1" style="overflow-x: auto">
             <tr>
-                <th>Navn:</th>
-                <th>Sport:</th>
-                <th>Medaljer:</th>
+                <th>    <button id="srtNameTitle">Navn:</button>  </th>
+                <th>
+                    <select id="filterSport" required>
+                        <option value="empty">Filtrer gren:</option>
+                        <option id="filterLangrenn" value="Langrenn">Langrenn</option>
+                        <option id="filterHopp" value="Hopp">Hopp</option>
+                        <option id="filterSkiskyting" value="Skiskyting">Skiskyting</option>
+                        <option id="filterSkøyter" value="Skøyter">Skøyter</option>
+                        <option id="filterAlpint" value="Alpint">Alpint</option>
+                    </select>
+                </th>
+                <th>     <button id="srtMedalTitle">Medaljer:</button>    </th>
             </tr>
         </table>
 
