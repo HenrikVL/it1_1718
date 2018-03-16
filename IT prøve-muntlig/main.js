@@ -21,7 +21,7 @@ db.collection("profiler");
        db.collection("profiler").add({
            name:    iName.value,
            sport:   iSport.value,
-           medals:  iMedals.value
+           medals:  iMedals.value*1
            });
         alert("opplasting fullført")
     });

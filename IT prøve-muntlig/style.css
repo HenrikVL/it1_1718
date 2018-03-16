@@ -22,9 +22,9 @@ body{
 .header{
     grid-area: header;
     display: grid;
-    grid-template-columns: 1fr 1fr 10fr 2fr;
+    grid-template-columns: 2fr 10fr 2fr;
     grid-template-areas:
-    "menu   x       title        register";
+    "menu        title        register";
     background-color: #2B2B2B;
     color: white;
     padding: 10px;
@@ -45,7 +45,7 @@ body{
     font-size: 20px;
     font-stretch: expanded;
     font-family: 'Teko', sans-serif;
-
+    text-decoration: underline;
 }
 
 .register{
@@ -293,7 +293,10 @@ body{
 }}
 
 
-
+#logo{
+    width: 10px;
+    height: 10px;
+}
 
 
 
