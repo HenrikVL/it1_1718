@@ -206,11 +206,6 @@ body{
 }
 
 
-
-
-
-
-
 .form{
     grid-area: form;
     display: grid;
@@ -297,6 +292,10 @@ body{
     width: 10px;
     height: 10px;
 }
+
+
+
+
 
 
 

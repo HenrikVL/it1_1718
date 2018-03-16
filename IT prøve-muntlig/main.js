@@ -5,13 +5,13 @@ firebase.initializeApp({
 });
 
 // Initialize Cloud Firestore through Firebase
-var db = firebase.firestore();
+let db = firebase.firestore();
 
-var iName =             document.querySelector('#inputName');
-var iSport =            document.querySelector('#inputSport');
-var iMedals =           document.querySelector('#inputMedals');
-var outputProfile =     document.querySelector('#list');
-var regProfileBtn =     document.querySelector('#registerProfileBtn');
+let iName =             document.querySelector('#inputName');
+let iSport =            document.querySelector('#inputSport');
+let iMedals =           document.querySelector('#inputMedals');
+let outputProfile =     document.querySelector('#list');
+let regProfileBtn =     document.querySelector('#registerProfileBtn');
 
 
 db.collection("profiler");
@@ -26,12 +26,12 @@ db.collection("profiler");
         alert("opplasting fullført")
     });
 
-var profiler = db.collection("profiler");
+let profiler = db.collection("profiler");
 
 profiler.onSnapshot(function (data) {
     outputProfile.innerHTML = "";
-    var document = data.docs;
-    for(var x in document){
+    let document = data.docs;
+    for(let x in document){
         outputProfile.innerHTML +=
             "<tr>" +
             "<td>" + document[x].data().name + "</td>" +
@@ -41,16 +41,16 @@ profiler.onSnapshot(function (data) {
     }
 });
 
-var srtName = document.querySelector("#srtNameTitle");
+let srtName = document.querySelector("#srtNameTitle");
 
 srtName.onclick = function(){
 
-    var orderQueryName = profiler.orderBy("name", "asc");
+    let orderQueryName = profiler.orderBy("name", "asc");
 
     orderQueryName.onSnapshot(function(data){
         outputProfile.innerHTML = "";
-        var objekt = data.docs;
-        for(var x in objekt)
+        let objekt = data.docs;
+        for(let x in objekt)
             outputProfile.innerHTML +=
                 "<tr>" +
                 "<td>" + objekt[x].data().name + "</td>" +
@@ -60,16 +60,14 @@ srtName.onclick = function(){
     });
 };
 
-var srtMedal = document.querySelector("#srtMedalTitle");
+let srtMedal = document.querySelector("#srtMedalTitle");
 
 srtMedal.onclick = function(){
-
-    var orderQueryMedals = profiler.orderBy("medals", "desc");
-
+    let orderQueryMedals = profiler.orderBy("medals", "desc");
     orderQueryMedals.onSnapshot(function(data){
         outputProfile.innerHTML = "";
-        var objekt = data.docs;
-        for(var x in objekt)
+        let objekt = data.docs;
+        for(let x in objekt)
             outputProfile.innerHTML +=
                 "<tr>" +
                 "<td>" + objekt[x].data().name + "</td>" +
@@ -92,13 +90,13 @@ srtMedal.onclick = function(){
     //MODAL.MODAL.MODAL.MODAL.
 
 // Get the modal
-var modal = document.getElementById('myModal');
+let modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+let btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+let span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal
 btn.onclick = function() {
