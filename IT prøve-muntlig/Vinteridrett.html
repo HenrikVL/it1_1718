@@ -60,10 +60,10 @@
 
         <table id="list1" style="overflow-x: auto">
             <tr>
-                <th>    <button id="srtNameTitle">Navn:</button>  </th>
+                <th>    <button id="srtNameTitle">Navn</button>  </th>
                 <th>
                     <select id="filterSport" required>
-                        <option value="empty">Filtrer gren:</option>
+                        <option value="empty">Filtrer gren</option>
                         <option id="filterLangrenn" value="Langrenn">Langrenn</option>
                         <option id="filterHopp" value="Hopp">Hopp</option>
                         <option id="filterSkiskyting" value="Skiskyting">Skiskyting</option>
@@ -71,7 +71,7 @@
                         <option id="filterAlpint" value="Alpint">Alpint</option>
                     </select>
                 </th>
-                <th>     <button id="srtMedalTitle">Medaljer:</button>    </th>
+                <th>     <button id="srtMedalTitle">Medaljer</button>    </th>
             </tr>
         </table>
 
@@ -89,6 +89,10 @@
 
 <div class="footer">
     <h1>footer</h1>
+
+
+
+
 </div>
 
 
@@ -130,10 +134,29 @@
             <input id="inputMedals" type="value" required placeholder="Antall medaljer...">
         </div>
         <div class="regProfile">
+            <h2>Registrer:</h2>
             <button id="registerProfileBtn" type="submit">
                 Registrer idrettsprofil
             </button>
         </div>
+        <div class="regPicture">
+            <h2>Last opp bilde:</h2>
+            <input id="inputPicture" type="file" accept="image/jpeg">
+        </div>
+        <div class="regAge">
+            <h2>Alder:</h2>
+            <input id="inputAge" type="value" placeholder="Alder...">
+        </div>
+        <div class="regHeight">
+            <h2>Høyde:</h2>
+            <input id="inputHeight" type="value" placeholder="Høyde i CM...">
+        </div>
+        <div class="regWeight">
+            <h2>Vekt:</h2>
+            <input id="inputWeight" type="value" placeholder="Vekt i KG...">
+        </div>
+
+
 
     </div>
     </div>

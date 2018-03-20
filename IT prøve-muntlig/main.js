@@ -10,6 +10,8 @@ let db = firebase.firestore();
 let iName =             document.querySelector('#inputName');
 let iSport =            document.querySelector('#inputSport');
 let iMedals =           document.querySelector('#inputMedals');
+let iPicture =          document.querySelector('#inputPicture');
+let iAge =              document.querySelector('#inputAge');
 let outputProfile =     document.querySelector('#list');
 let regProfileBtn =     document.querySelector('#registerProfileBtn');
 
@@ -21,7 +23,9 @@ db.collection("profiler");
        db.collection("profiler").add({
            name:    iName.value,
            sport:   iSport.value,
-           medals:  iMedals.value*1
+           medals:  iMedals.value*1,
+           picture: iPicture.value,
+           age:     iAge.value*1,
            });
         alert("opplasting fullført")
     });

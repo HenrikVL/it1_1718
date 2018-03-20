@@ -1,10 +1,10 @@
 body{
     display: grid;
     background-color: white;
-    padding 15px;
+    padding: 15px;
     font-family: 'Raleway', sans-serif;
-
 }
+
 
 .grid{
     display: grid;
@@ -16,7 +16,6 @@ body{
     "main"
     "footer"
     "form";
-
 }
 
 .header{
@@ -28,7 +27,6 @@ body{
     background-color: #2B2B2B;
     color: white;
     padding: 10px;
-
 }
 
 .menu {
@@ -56,40 +54,12 @@ body{
     font-size: 16px;
 }
 
-#myBtn{
-    margin: auto;
-    padding: auto;
-    text-align: center;
-    font-family: 'Mina', sans-serif;
-    font-size: 30px;
-    color: #00D8C3;
-    border: none;
-    background-color: transparent;
-}
-#myBtn:hover {
-    margin: auto;
-    padding: auto;
-    text-align: center;
-    font-family: 'Mina', sans-serif;
-    font-size: 30px;
-    color: #00CCB7;
-    border: none;
-    font-weight: bold;
-    font-style: italic;
-    background-color: transparent;
-}
-
-
-
 .main{
     grid-area: main;
     width: auto;
     margin: 20px;
     background-color: #363647;
 }
-
-
-
 
 .contentWrapper{
     grid-area: contentWrapper;
@@ -110,10 +80,6 @@ body{
 .sport{
     grid-area: sport;
 }
-
-
-
-
 
 #list1 {
     background-color: #4D4E66;
@@ -144,19 +110,12 @@ body{
     width: 100%;
 }
 
-
-
-
-
-
-
 .footer{
     grid-area: footer;
     background-color: #2B2B2B;
     color: white;
-    padding: 5px;
+    padding: 10px;
 }
-
 
 .overview{
     grid-area: overview;
@@ -211,9 +170,10 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-    "regTitle       x           x"
-    "regName        regSport    regMedals"
-    "regProfile     regProfile  regProfile"
+    "regTitle       regTitle    regTitle"
+    "regName        regAge      regMedals"
+    "regSport       regHeight   regWeight"
+    "regProfile     regPicture  regPicture"
 }
 
 .regTitle{
@@ -246,6 +206,31 @@ body{
     padding: 5px;
     margin: 5px;
 }
+
+.regPicture{
+    grid-area: regPicture;
+    padding: 5px;
+    margin: 5px;
+}
+.regAge{
+    grid-area: regAge;
+    padding: 5px;
+    margin: 5px;
+}
+
+.regHeight{
+    grid-area: regHeight;
+    padding: 5px;
+    margin: 5px;
+}
+
+.regWeight{
+    grid-area: regWeight;
+    padding: 5px;
+    margin: 5px;
+}
+
+
 
 
 /* The Modal (background) */
@@ -285,7 +270,7 @@ body{
     color: #000;
     text-decoration: none;
     cursor: pointer;
-}}
+}
 
 
 #logo{
@@ -293,9 +278,107 @@ body{
     height: 10px;
 }
 
+#srtNameTitle{
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    font-family: 'Mina', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background-color: transparent;
+}
 
+#srtMedalTitle{
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    font-family: 'Mina', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background-color: transparent;
+}
 
+#srtNameTitle:hover{
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    font-family: 'Mina', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline #00D8C3;
+    color: #2B2B2B;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
 
+#srtMedalTitle:hover{
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    font-family: 'Mina', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline #00D8C3;
+    color: #2B2B2B;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
 
+#filterSport{
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    font-family: 'Mina', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
 
+#filterSport:hover{
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    font-family: 'Mina', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline #00D8C3;
+    color: #2B2B2B;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+#myBtn{
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    font-family: 'Mina', sans-serif;
+    font-size: 40px;
+    color: white;
+    border: none;
+    background-color: transparent;
+    text-decoration: underline #00D8C3;
+}
+#myBtn:hover {
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    font-family: 'Mina', sans-serif;
+    font-size: 40px;
+    color: #00D8C3;
+    border: none;
+    text-decoration: underline white;
+    background-color: transparent;
+    cursor: pointer;
+}
 
