@@ -1,6 +1,6 @@
 body{
     display: grid;
-    background-color: white;
+    background-color: whitesmoke;
     padding: 15px;
     font-family: 'Raleway', sans-serif;
 }
@@ -11,6 +11,7 @@ body{
     margin: 0px;
     padding: 10px;
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
     grid-template-areas:
     "header"
     "main"
@@ -40,10 +41,14 @@ body{
     grid-area: title;
     text-align: center;
     margin: auto;
-    font-size: 20px;
+    font-size: 30px;
     font-stretch: expanded;
     font-family: 'Teko', sans-serif;
     text-decoration: underline;
+}
+
+h1{
+    margin: 0px;
 }
 
 .register{
@@ -71,7 +76,11 @@ body{
     background-color:#4D4E66;
     color: white;
     padding: 10px;
+    overflow-y: auto;
+    max-height: 200px;
 }
+
+
 
 .name{
     grid-area: name;
@@ -108,7 +117,16 @@ body{
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
+    overflow-y: auto;
+    overflow-x: auto;
 }
+
+.footerWrapper{
+    display: grid;
+}
+
+
+
 
 .footer{
     grid-area: footer;
@@ -140,6 +158,12 @@ body{
     box-sizing: border-box;
 }
 
+#displayType{
+    width: auto;
+    padding: 10px;
+    margin: 8px;
+    box-sizing: border-box;
+}
 
 #sortGrid{
     grid-area: SNgrid;
@@ -175,6 +199,8 @@ body{
     "regSport       regHeight   regWeight"
     "regProfile     regPicture  regPicture"
 }
+
+
 
 .regTitle{
     grid-area: regTitle;
@@ -344,6 +370,67 @@ body{
 }
 
 #filterSport:hover{
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    font-family: 'Mina', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline #00D8C3;
+    color: #2B2B2B;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+#srtName{
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    font-family: 'Mina', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#srtName:hover{
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    font-family: 'Mina', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline #00D8C3;
+    color: #2B2B2B;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+th, td {
+    border-bottom: 1px solid #2B2B2B;
+    padding: 10px;
+}
+
+#srtMedal{
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    font-family: 'Mina', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#srtMedal:hover{
     margin: auto;
     padding: auto;
     text-align: center;

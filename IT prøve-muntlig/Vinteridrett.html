@@ -60,10 +60,15 @@
 
         <table id="list1" style="overflow-x: auto">
             <tr>
-                <th>    <button id="srtNameTitle">Navn</button>  </th>
+                <th>
+                    <select id="srtName">
+                        <option value="AZ">A-Z</option>
+                        <option value="ZA">Z-A</option>
+                    </select>
+                </th>
                 <th>
                     <select id="filterSport" required>
-                        <option value=""></option>
+                        <option id="filterNone" value="x">ingen filtrering</option>
                         <option id="filterLangrenn" value="Langrenn">Langrenn</option>
                         <option id="filterHopp" value="Hopp">Hopp</option>
                         <option id="filterSkiskyting" value="Skiskyting">Skiskyting</option>
@@ -71,14 +76,25 @@
                         <option id="filterAlpint" value="Alpint">Alpint</option>
                     </select>
                 </th>
-                <th>     <button id="srtMedalTitle">Medaljer</button>    </th>
+                <th>
+                    <select id="srtMedal">
+                        <option value="HL">Høy-Lav</option>
+                        <option value="LH">Lav-Høy</option>
+                    </select>
+                </th>
             </tr>
         </table>
 
     </div>
 
+    <!--Grid-->
+    <div class="contentWrapper2">
+
+    </div>
+
+    <!--List-->
     <div class="contentWrapper">
-        <table id="list" style="overflow-x: auto">
+        <table id="list">
 
         </table>
 
@@ -88,10 +104,10 @@
 </div>
 
 <div class="footer">
-    <h1>footer</h1>
 
-
-
+    <div class="footerWrapper">
+        <h4>En Viken Lied produksjon</h4>
+    </div>
 
 </div>
 

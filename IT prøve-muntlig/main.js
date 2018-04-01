@@ -7,17 +7,26 @@ firebase.initializeApp({
 // Initialize Cloud Firestore through Firebase
 let db = firebase.firestore();
 
+
+
+//Define variables
 let iName =             document.querySelector('#inputName');
 let iSport =            document.querySelector('#inputSport');
 let iMedals =           document.querySelector('#inputMedals');
 let iPicture =          document.querySelector('#inputPicture');
 let iAge =              document.querySelector('#inputAge');
+let iHeight =           document.querySelector('#inputHeight');
+let iWeight =           document.querySelector('#inputWeight')
 let outputProfile =     document.querySelector('#list');
 let regProfileBtn =     document.querySelector('#registerProfileBtn');
+let profiler =          db.collection("profiler");
 
 
+
+
+
+//Create a folder in which to store data (profiles og athletes)
 db.collection("profiler");
-
 
     regProfileBtn.addEventListener('click', function () {
        db.collection("profiler").add({
@@ -26,14 +35,16 @@ db.collection("profiler");
            medals:  iMedals.value*1,
            picture: iPicture.value,
            age:     iAge.value*1,
+           height:  iHeight*1,
+           weight:  iWeight*1,
            });
         alert("opplasting fullført")
     });
 
 
-let profiler = db.collection("profiler");
-
-profiler.onSnapshot(function (data) {
+//Sort name alphabetically from the start (ascending A-Z)
+let profilerOA = profiler.orderBy("name", "asc");
+profilerOA.onSnapshot(function (data) {
     outputProfile.innerHTML = "";
     let document = data.docs;
     for(let x in document){
@@ -47,93 +58,157 @@ profiler.onSnapshot(function (data) {
 });
 
 
-let srtName = document.querySelector("#srtNameTitle");
-
-srtName.onclick = function(){
-
-    let orderQueryName = profiler.orderBy("name", "asc");
-
-    orderQueryName.onSnapshot(function(data){
-        outputProfile.innerHTML = "";
-        let objekt = data.docs;
-        for(let x in objekt)
-            outputProfile.innerHTML +=
-                "<tr>" +
-                "<td>" + objekt[x].data().name + "</td>" +
-                "<td>" + objekt[x].data().sport + "</td>" +
-                "<td>" + objekt[x].data().medals + "</td>" +
-                "</tr>";
-    });
-};
 
 
-let srtMedal = document.querySelector("#srtMedalTitle");
-
-srtMedal.onclick = function(){
-    let orderQueryMedals = profiler.orderBy("medals", "desc");
-    orderQueryMedals.onSnapshot(function(data){
-        outputProfile.innerHTML = "";
-        let objekt = data.docs;
-        for(let x in objekt)
-            outputProfile.innerHTML +=
-                "<tr>" +
-                "<td>" + objekt[x].data().name + "</td>" +
-                "<td>" + objekt[x].data().sport + "</td>" +
-                "<td>" + objekt[x].data().medals + "</td>" +
-                "</tr>";
-    });
-};
-
-
-let catInput = document.querySelector('#filterSport');
-let search = "";
-
-catInput.addEventListener('change', function () {
-    console.log("endring");
-    let database = db.collection('profiler');
-    search = catInput.value;
-    let query = database.where('sport', '==', search);
-    outputProfile.innerHTML = "";
-
-    query.onSnapshot(function (data) {
-        let objekt = data.docs;
-
-        for(let x in objekt){
-            let doc = objekt[x].data();
-            outputProfile.innerHTML +=
-                "<tr>" +
-                "<td>" + doc.name + "</td>" +
-                "<td>" + doc.sport + "</td>" +
-                "<td>" + doc.medals + "</td>" +
-                "</tr>";
-        }
-    })
+//Sort names alphabetically
+let nameOrderAsc = document.querySelector('#srtName');
+let select = "";
+nameOrderAsc.addEventListener('change', function () {
+    select = nameOrderAsc.value;
+    if(select == "AZ"){
+        profilerOA.onSnapshot(function (data) {
+            outputProfile.innerHTML = "";
+            let document = data.docs;
+            for(let x in document){
+                outputProfile.innerHTML +=
+                    "<tr>" +
+                    "<td>" + document[x].data().name + "</td>" +
+                    "<td>" + document[x].data().sport + "</td>" +
+                    "<td>" + document[x].data().medals + "</td>" +
+                    "</tr>";
+            }
+        })
+    } else{
+        let profilerOD = profiler.orderBy("name", "desc");
+        profilerOD.onSnapshot(function (data) {
+            outputProfile.innerHTML = "";
+            let document = data.docs;
+            for(let x in document){
+                outputProfile.innerHTML +=
+                    "<tr>" +
+                    "<td>" + document[x].data().name + "</td>" +
+                    "<td>" + document[x].data().sport + "</td>" +
+                    "<td>" + document[x].data().medals + "</td>" +
+                    "</tr>";
+            }
+        })
+    }
 });
 
 
-function myFunction() {
-    // Declare variables
-    var input, filter, ul, li, a, i;
-    input = document.getElementById('myInput');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("list");
-    li = ul.getElementsByTagName('th');
 
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
+
+
+
+
+
+
+
+
+//Sort medals by high-low/low-high
+let medalOrderAsc = document.querySelector('#srtMedal');
+let selectMedal = "";
+medalOrderAsc.addEventListener('change', function () {
+    selectMedal = medalOrderAsc.value;
+    if(selectMedal == "HL"){
+        let medalOD = profiler.orderBy("medals", "desc");
+        medalOD.onSnapshot(function (data) {
+            outputProfile.innerHTML = "";
+            let document = data.docs;
+            for(let x in document){
+                outputProfile.innerHTML +=
+                    "<tr>" +
+                    "<td>" + document[x].data().name + "</td>" +
+                    "<td>" + document[x].data().sport + "</td>" +
+                    "<td>" + document[x].data().medals + "</td>" +
+                    "</tr>";
+            }
+        })
+    } else{
+        let medalOA = profiler.orderBy("medals", "asc");
+        medalOA.onSnapshot(function (data) {
+            outputProfile.innerHTML = "";
+            let document = data.docs;
+            for(let x in document){
+                outputProfile.innerHTML +=
+                    "<tr>" +
+                    "<td>" + document[x].data().name + "</td>" +
+                    "<td>" + document[x].data().sport + "</td>" +
+                    "<td>" + document[x].data().medals + "</td>" +
+                    "</tr>";
+            }
+        })
+    }
+});
+
+
+
+
+
+
+
+
+
+//Filtrate different sports (category)
+let catInput = document.querySelector('#filterSport');
+let search = "";
+catInput.addEventListener('change', function () {
+        let database = db.collection('profiler');
+        search = catInput.value;
+        if(search == "x"){
+            let profilerOA = profiler.orderBy("name", "asc");
+            profilerOA.onSnapshot(function (data) {
+                outputProfile.innerHTML = "";
+                let document = data.docs;
+                for(let x in document){
+                    outputProfile.innerHTML +=
+                        "<tr>" +
+                        "<td>" + document[x].data().name + "</td>" +
+                        "<td>" + document[x].data().sport + "</td>" +
+                        "<td>" + document[x].data().medals + "</td>" +
+                        "</tr>";
+                }
+            });
+        }else{
+            let query = database.where('sport', '==', search);
+            outputProfile.innerHTML = "";
+            query.onSnapshot(function (data) {
+                let objekt = data.docs;
+                for(let x in objekt){
+                    let doc = objekt[x].data();
+                    outputProfile.innerHTML +=
+                        "<tr>" +
+                        "<td>" + doc.name + "</td>" +
+                        "<td>" + doc.sport + "</td>" +
+                        "<td>" + doc.medals + "</td>" +
+                        "</tr>";
+                }
+            });
+        }
+
+});
+
+
+
+
+//Search for profiles
+function myFunction() {
+    let input, filter, table, tr, td, i;
+    input = document.getElementById("nameSrc");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("list");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
         }
     }
 }
-
-
-
-
-
 
 
 

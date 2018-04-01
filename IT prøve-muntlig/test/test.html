@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+
+    <style>
+
+        .grid{
+            border: solid red;
+        }
+
+        .list{
+            border: solid green;
+        }
+
+        #name{
+            border: solid blue;
+        }
+
+        #sport{
+            border: solid yellow;
+        }
+
+        #medals{
+            border: solid purple;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+
+
+<div class="grid">
+    <h1>grid</h1>
+</div>
+
+
+<div class="list">
+    <h1>list</h1>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
+
+<script>
+    firebase.initializeApp({
+        apiKey: "AIzaSyBe2NMHpFn1mdv9qQ9Su4xPNyh4bStpbYA",
+        authDomain: "skjema-e30fe.firebaseapp.com",
+        projectId: "skjema-e30fe"
+    });
+
+    // Initialize Cloud Firestore through Firebase
+    let db = firebase.firestore();
+
+
+    let outputProfile =     document.querySelector('#list');
+    let gridDisplay =       document.querySelector('.grid');
+    let displayType =       document.querySelector('#displayType');
+    let profiler =          db.collection("profiler");
+
+
+
+    db.collection("profiler");
+
+
+    regProfileBtn.addEventListener('click', function () {
+        db.collection("profiler").add({
+            name:    iName.value,
+            sport:   iSport.value,
+            medals:  iMedals.value*1,
+            picture: iPicture.value,
+            age:     iAge.value*1,
+            height:  iHeight*1,
+            weight:  iWeight*1,
+        });
+        alert("opplasting fullført")
+    });
+
+
+
+
+
+
+
+
+
+
+
+    profiler.onSnapshot(function (data) {
+        gridDisplay.innerHTML = "";
+        let document = data.docs;
+        for(let x in document){
+            gridDisplay.innerHTML +=
+                "<div>" +
+                "<div id='name'>" + document[x].data().name + "</div>" +
+                "<div id='sport'>" + document[x].data().sport + "</div>" +
+                "<div id='medals'>" + document[x].data().medals + "</div>" +
+                "</div>";
+        }
+    });
+
+
+
+    profiler.onSnapshot(function (data) {
+        outputProfile.innerHTML = "";
+        let document = data.docs;
+        for(let x in document){
+            outputProfile.innerHTML +=
+                "<tr>" +
+                "<td>" + document[x].data().name + "</td>" +
+                "<td>" + document[x].data().sport + "</td>" +
+                "<td>" + document[x].data().medals + "</td>" +
+                "</tr>";
+        }
+    });
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
