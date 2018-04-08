@@ -47,9 +47,16 @@
 
     <div class="overview">
 
+        <div class="h3O">
+            <h3 id="h3O">Søk:</h3>
+        </div>
+
         <div class="nameSrcGrid">
-            <h3>Søk:</h3>
             <input id="nameSrc" type="text" placeholder="Navn..." onkeyup="myFunction()">
+        </div>
+
+        <div class="gridview">
+            <a id="changeView" href="gridview.html">Gridoversikt</a>
         </div>
 
     </div>
@@ -137,11 +144,16 @@
         <div class="regSport">
             <h2>Utøverens gren:</h2>
             <select id="inputSport" required>
+                <option value="" disabled selected>Velg en idrettsgren...</option>
                 <option value="Langrenn">Langrenn</option>
                 <option value="Hopp">Hopp</option>
                 <option value="Skiskyting">Skiskyting</option>
                 <option value="Skøyter">Skøyter</option>
                 <option value="Alpint">Alpint</option>
+                <option value="Bob">Bob</option>
+                <option value="Curling">Curling</option>
+                <option value="KunstLøp">Kunstløp</option>
+            </select>
             </select>
         </div>
 
@@ -157,7 +169,7 @@
         </div>
         <div class="regPicture">
             <h2>Last opp bilde:</h2>
-            <input id="inputPicture" type="file" accept="image/jpeg">
+            <input id="inputPicture" type="url" placeholder="URL...">
         </div>
         <div class="regAge">
             <h2>Alder:</h2>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Teko" rel="stylesheet">
+
+    <style>
+        body{
+            background-color: #1D1E1C !important;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+<div class="grid">
+
+
+    <div class="header">
+        <div class="menu">
+            <img src="assets/nsf-logo-original-hvit.png" height="100px"/></div>
+        <div class="title">
+            <h1> <a href="Vinteridrett.html">Norske Idrettsutøvere</a></h1>
+        </div>
+
+
+        <div class="register">
+
+            <button id="myBtn">Registrer</button>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="main">
+
+
+
+        <div class="overview">
+
+            <div class="nameSrcGrid">
+                <h3>Søk:</h3>
+                <input id="nameSrc" type="text" placeholder="Navn..." onkeyup="myFunction()">
+            </div>
+
+
+        </div>
+
+        <div class="contentWrapper">
+
+            <!-- FIX grid -->
+
+            <table id="list1" style="overflow-x: auto">
+                <tr>
+                    <th>
+                        <select id="srtName">
+                            <option value="AZ">A-Z</option>
+                            <option value="ZA">Z-A</option>
+                        </select>
+                    </th>
+                    <th>
+                        <select id="filterSport" required>
+                            <option id="filterNone" value="x">ingen filtrering</option>
+                            <option id="filterLangrenn" value="Langrenn">Langrenn</option>
+                            <option id="filterHopp" value="Hopp">Hopp</option>
+                            <option id="filterSkiskyting" value="Skiskyting">Skiskyting</option>
+                            <option id="filterSkøyter" value="Skøyter">Skøyter</option>
+                            <option id="filterAlpint" value="Alpint">Alpint</option>
+                        </select>
+                    </th>
+                    <th>
+                        <select id="srtMedal">
+                            <option value="HL">Høy-Lav</option>
+                            <option value="LH">Lav-Høy</option>
+                        </select>
+                    </th>
+                </tr>
+            </table>
+
+        </div>
+
+        <!--Grid-->
+        <div class="contentWrapper2">
+
+        </div>
+
+        <!--List-->
+        <div class="contentWrapper">
+            <table id="list">
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+    <div class="footer">
+
+        <div class="footerWrapper">
+            <h4>En Viken Lied produksjon</h4>
+        </div>
+
+        <div class="adminPageDiv">
+            <a href=""></a>
+        </div>
+
+
+    </div>
+
+
+
+
+</div>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="form">
+
+            <div class="regTitle">
+                <h1>Registrer utøvere:</h1>
+            </div>
+
+            <div class="regName">
+                <h2>Navn på utøver:</h2>
+                <input id="inputName" type="text" required placeholder="Navn...">
+            </div>
+
+            <div class="regSport">
+                <h2>Utøverens gren:</h2>
+                <select id="inputSport" required>
+                    <option value="" disabled selected>Velg en idrettsgren...</option>
+                    <option value="Langrenn">Langrenn</option>
+                    <option value="Hopp">Hopp</option>
+                    <option value="Skiskyting">Skiskyting</option>
+                    <option value="Skøyter">Skøyter</option>
+                    <option value="Alpint">Alpint</option>
+                </select>
+            </div>
+
+            <div class="regMedals">
+                <h2>Ol-gull:</h2>
+                <input id="inputMedals" type="value" required placeholder="Antall medaljer...">
+            </div>
+            <div class="regProfile">
+                <h2>Registrer:</h2>
+                <button id="registerProfileBtn" type="submit">
+                    Registrer idrettsprofil
+                </button>
+            </div>
+            <div class="regPicture">
+                <h2>Last opp bilde:</h2>
+                <input id="inputPicture" type="file" accept="image/jpeg">
+            </div>
+            <div class="regAge">
+                <h2>Alder:</h2>
+                <input id="inputAge" type="value" placeholder="Alder...">
+            </div>
+            <div class="regHeight">
+                <h2>Høyde:</h2>
+                <input id="inputHeight" type="value" placeholder="Høyde i CM...">
+            </div>
+            <div class="regWeight">
+                <h2>Vekt:</h2>
+                <input id="inputWeight" type="value" placeholder="Vekt i KG...">
+            </div>
+
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

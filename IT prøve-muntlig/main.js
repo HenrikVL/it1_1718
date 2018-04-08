@@ -35,8 +35,8 @@ db.collection("profiler");
            medals:  iMedals.value*1,
            picture: iPicture.value,
            age:     iAge.value*1,
-           height:  iHeight*1,
-           weight:  iWeight*1,
+           height:  iHeight.value*1,
+           weight:  iWeight.value*1,
            });
         alert("opplasting fullført")
     });
